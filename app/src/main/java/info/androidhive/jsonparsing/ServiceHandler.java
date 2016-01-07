@@ -53,6 +53,9 @@ public class ServiceHandler {
 			// Checking http request method type
 			if (method == POST) {
 				HttpPost httpPost = new HttpPost(url);
+				int n=httpResponse.getStatusLine().getStatusCode();
+				Log.d("status code post",String.valueOf(n));
+
 				// adding post params
 				if (params != null) {
 					httpPost.setEntity(new UrlEncodedFormEntity(params));
@@ -70,10 +73,16 @@ public class ServiceHandler {
 				HttpGet httpGet = new HttpGet(url);
 
 				httpResponse = httpClient.execute(httpGet);
+				int n=httpResponse.getStatusLine().getStatusCode();
+				Log.d("status code",String.valueOf(n));
 
 			}
 			httpEntity = httpResponse.getEntity();
+
+			/*int n=httpResponse.getStatusLine().getStatusCode();
+			Log.d("status code",String.valueOf(n));*/
 			response = EntityUtils.toString(httpEntity);
+
 
 		} catch (UnsupportedEncodingException e) {
 			e.printStackTrace();

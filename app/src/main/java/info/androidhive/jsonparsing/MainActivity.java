@@ -27,7 +27,7 @@ public class MainActivity extends ListActivity {
 	private ProgressDialog pDialog;
 
 	// URL to get contacts JSON
-	private static String url = "http://api.androidhive.info/contacts/";
+	private static String url = "http://192.168.0.25:8080/gpsdata/sendData";
 
 	// JSON Node names
 	private static final String TAG_CONTACTS = "contacts";
@@ -44,7 +44,7 @@ public class MainActivity extends ListActivity {
 	// contacts JSONArray
 	JSONArray contacts = null;
 
-	// Hashmap for ListView
+	// Hashmap for ListViews
 	ArrayList<HashMap<String, String>> contactList;
 
 	@Override
